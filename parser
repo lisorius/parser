@@ -1,0 +1,8 @@
+import requests
+from bs4 import BeautifulSoup
+url = 'ссылка сайта который будете парсить'
+response = requests.get(url)
+print(response)
+bs = BeautifulSoup(response.text,"lxml")
+quotes = bs.find_all('div')#то, что будете отыскивать и получать, напиример по тегу, классу, id и тд
+print(quotes)
